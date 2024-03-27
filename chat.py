@@ -1,6 +1,6 @@
 import discord
 from settings import setting
-#from bot_logic import gen_pass
+from bot_logic import *
 # Zmienna intencje przechowuje uprawnienia bota
 intents = discord.Intents.default()
 # Włączanie uprawnienia do czytania wiadomości
@@ -23,7 +23,10 @@ async def on_message(message):
     elif message.content.startswith('$bye'):
         await message.channel.send("\\U0001f642")
     elif message.content.startswith('$password'):
-        await message.channel.send("haslo")
+        await message.channel.send(haslo(10))
+    elif message.content.startswith('co tam'):
+        await message.channel.send("nie narzekam")
+
     else:
         await message.channel.send(message.content)
 
