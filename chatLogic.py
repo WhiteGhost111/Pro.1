@@ -1,6 +1,7 @@
 import random
 
-def gen_pass(pass_length):
+
+def haslo(pass_length):
     elements = "+-/*!&$#?=@<>"
     password = ""
 
@@ -8,11 +9,19 @@ def gen_pass(pass_length):
         password += random.choice(elements)
 
     return password
-def money():
-    x= random.randint(1,2)
-    anim = ""
-    if x==1:
-        anim ="orzeł"
+
+
+def gen_emodji():
+    emodji = ["\U0001f600", "\U0001f642", "\U0001F606", "\U0001F923"]
+    return random.choice(emodji)
+
+
+def flip_coin():
+    flip = random.randint(0, 2)
+    if flip == 0:
+        return "HEADS"
     else:
-        anim ="reszka"
-    return anim
+        return "TAILS"
+def los():
+    lo=random.randint(1,6)
+    return lo
