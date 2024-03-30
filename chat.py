@@ -22,11 +22,16 @@ async def on_message(message):
         await message.channel.send("Cześć!")
     elif message.content.startswith('$bye'):
         await message.channel.send("\\U0001f642")
-    elif message.content.startswith('$password'):
-        await message.channel.send(haslo(10))
+    #elif message.content.startswith('$password'):    - import nie działa
+        #await message.channel.send(haslo(10))
     elif message.content.startswith('co tam'):
         await message.channel.send("nie narzekam")
-
+    elif  message.content.startswith('$heh'):
+        if len(message.content) > 4:
+            count_heh = int(message.content[4:])
+        else:
+            count_heh = 5
+        await message.channel.send("he" * count_heh)
     else:
         await message.channel.send(message.content)
 
